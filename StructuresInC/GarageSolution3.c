@@ -25,14 +25,21 @@ int main() {
     car2.seatingCap = 4;
     car2.cityMileage = 300;
 
-    // Print car details
-    printf("Car 1 Details:\n");
-    printf("Engine: %s\nFuel Type: %s\nFuel Tank Capacity: %dL\nSeating Capacity: %d\nCity Mileage: %d km/l\n\n",
+    // Print table header
+    printf("-------------------------------------------------------------------\n");
+    printf("| %-10s | %-10s | %-12s | %-10s | %-12s |\n", 
+           "Engine", "Fuel Type", "Fuel Tank (L)", "Seats", "City Mileage");
+    printf("-------------------------------------------------------------------\n");
+
+    // Print car1 details
+    printf("| %-10s | %-10s | %-12d | %-10d | %-12d |\n", 
            car1.engine, car1.fuelType, car1.fuelTankCap, car1.seatingCap, car1.cityMileage);
 
-    printf("Car 2 Details:\n");
-    printf("Engine: %s\nFuel Type: %s\nFuel Tank Capacity: %dL\nSeating Capacity: %d\nCity Mileage: %d km/l\n",
+    // Print car2 details
+    printf("| %-10s | %-10s | %-12d | %-10d | %-12d |\n", 
            car2.engine, car2.fuelType, car2.fuelTankCap, car2.seatingCap, car2.cityMileage);
+
+    printf("-------------------------------------------------------------------\n");
 
     return 0;
 }
