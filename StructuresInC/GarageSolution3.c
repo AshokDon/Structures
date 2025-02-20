@@ -1,31 +1,38 @@
 #include <stdio.h>
+#include <string.h>
 
-// Defining a structure for Car
-struct Car {
+// Define a structure for Car
+struct {
     char engine[20];
-    char fuelType[10];
-    int fuelTankCapacity;
-    int seatingCapacity;
-    float cityMileage;
-};
+    char fuelType[20];
+    int fuelTankCap;
+    int seatingCap;
+    int cityMileage;
+} car1, car2;
 
 int main() {
-    // Creating an array of 3 cars
-    struct Car cars[3] = {
-        {"V8", "Petrol", 60, 5, 12.5},
-        {"Electric", "Battery", 0, 4, 300.0},
-        {"Hybrid", "Petrol/Electric", 45, 5, 25.5}
-    };
+    // Assign values to car1
+    strcpy(car1.engine, "V8");
+    strcpy(car1.fuelType, "Petrol");
+    car1.fuelTankCap = 60;
+    car1.seatingCap = 5;
+    car1.cityMileage = 12;
 
-    // Printing car details
-    printf("%-10s %-10s %-10s %-10s %-10s\n", "Engine", "Fuel Type", "Tank Cap", "Seats", "Mileage");
-    printf("---------------------------------------------------\n");
+    // Assign values to car2
+    strcpy(car2.engine, "Electric");
+    strcpy(car2.fuelType, "Battery");
+    car2.fuelTankCap = 0;
+    car2.seatingCap = 4;
+    car2.cityMileage = 300;
 
-    for (int i = 0; i < 3; i++) {
-        printf("%-10s %-10s %-10d %-10d %-10.1f\n",
-               cars[i].engine, cars[i].fuelType, cars[i].fuelTankCapacity,
-               cars[i].seatingCapacity, cars[i].cityMileage);
-    }
+    // Print car details
+    printf("Car 1 Details:\n");
+    printf("Engine: %s\nFuel Type: %s\nFuel Tank Capacity: %dL\nSeating Capacity: %d\nCity Mileage: %d km/l\n\n",
+           car1.engine, car1.fuelType, car1.fuelTankCap, car1.seatingCap, car1.cityMileage);
+
+    printf("Car 2 Details:\n");
+    printf("Engine: %s\nFuel Type: %s\nFuel Tank Capacity: %dL\nSeating Capacity: %d\nCity Mileage: %d km/l\n",
+           car2.engine, car2.fuelType, car2.fuelTankCap, car2.seatingCap, car2.cityMileage);
 
     return 0;
 }
