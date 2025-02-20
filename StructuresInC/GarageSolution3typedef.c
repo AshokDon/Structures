@@ -2,14 +2,14 @@
 #include <string.h>
 
 // Define a structure using typedef
-typedef struct {
+struct Car{
     char engine[20];
     char fuelType[20];
     int fuelTankCap;
     int seatingCap;
     int cityMileage;
-} Car;
-
+};
+typedef struct Car Car;
 int main() {
     // Declare variables of type Car
     Car car1, car2;
